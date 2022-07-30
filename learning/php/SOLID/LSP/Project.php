@@ -2,7 +2,7 @@
 
 class Project
 {
-    protected $documents;
+    protected array $documents;
 
     public function addDocument(Document $document)
     {
@@ -19,6 +19,27 @@ class Project
     public function saveAll()
     {
         foreach ($this->documents as $document) {
+            /*
+                Change because prefering vertical code
+                to horizontal code.
+
+
+                if (!($document instanceof ReadOnlyDocument)) {
+                    $document->save();
+                }
+            */
+
+
+            /*
+                For Liskov Substitution Principle
+                we should be able to use document and 
+                read-only document interchangebly.
+                
+                But we can't use document and read-only
+                document interchangebly because we
+                can't save read-only document.
+            */
+
             if ($document instanceof ReadOnlyDocument) {
                 continue;
             }
