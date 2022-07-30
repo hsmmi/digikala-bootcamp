@@ -20,7 +20,13 @@ class PriceCalculator
     /*
         Due to SPR we should move this method
         to the new Class
+        Because maybe two diffrent user want to change
+        calculateItemsPrices and getFormattedPrices
+        and it's not compatible with SPR 
+        PriceFormatter.php as interface
+        USDPriceFormatter.php as new class
 
+        
         We may have diffrent approaches to this problem
         so we should use interface to solve this problem
         and interface is a signiture of the method
