@@ -1,6 +1,10 @@
 <?php
 
-class ItemWithDiscount
+/*
+    final class X: is closed for extension.
+*/
+
+class ItemWithDiscount implements Priceable
 {   
     /*
         private float $price;
@@ -15,9 +19,9 @@ class ItemWithDiscount
 
     public function __construct(
         private float $price, // promoted constructor
+        // Don't use float for price
         private float $discount = 0.0
     )
-    // Don't use float for price
     {
     }
 
