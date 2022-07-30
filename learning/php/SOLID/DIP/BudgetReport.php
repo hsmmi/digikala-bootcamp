@@ -4,7 +4,8 @@ class BudgetReport
 {
     private $db;
 
-    public function __construct(MySQLDatabase $db)
+    // public function __construct(MySQLDatabase $db) "Lahim Doshakh"
+    public function __construct(DatabaseInterface $db)
     {
         $this->db = $db;
     }
@@ -16,6 +17,6 @@ class BudgetReport
 
     public function save()
     {
-        echo "save report";
+        $this->db->insert();
     }
 }

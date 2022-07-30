@@ -1,6 +1,6 @@
 <?php
 
-class MySQLDatabase
+class MySQLDatabase implements DatabaseInterface
 {
     public function insert()
     {
