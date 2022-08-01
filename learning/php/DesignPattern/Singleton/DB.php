@@ -3,7 +3,7 @@
 class DB
 {
     public static $instanceCount = 0;
-    private static $instance;
+    private static DB $instance;
 
     /*
         we don't have pubclic constructor because we
