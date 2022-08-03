@@ -23,15 +23,24 @@ $requestContext = new RequestContext();
 $requestContext->fromRequest($request);
 $matcher = new UrlMatcher($routes, $request);
 
+function render_template($request)
+{
+    // Global the variables with extract
+    extract($request->attributes->all());
+
+    return include sprintf(dirname(__DIR__).'/src/pages/'.'/src/pages/'.$request->attributes->get('_route').'.php', $name);
+}
 
 // Can do try catch globally
 
 try {
     // dump($matcher->match($request->getPathInfo())); 
-    $attributes = dump($matcher->match($request->getPathInfo())); 
+    // $attributes = dump($matcher->match($request->getPathInfo())); 
 
-    extract($attributes);
-    require sprintf(dirname(__DIR__).'/src/pages/'.'/src/pages/'.$attributes['_route'].'.php', $attributes);
+    // Request object has the ability to add parameters to them
+    $request->attributes->add($matcher->match($request->getPathInfo()));
+
+    $respone = render_template($request);
 } catch (ResourceNotFoundException $e) {
     $response->setContent('Page not found', 404);
 } catch (Exception $e) {
