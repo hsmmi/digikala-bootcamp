@@ -1,14 +1,10 @@
-# Import
-from math import inf
-
-# Functions
-
-
-# Variables
-
-
 # Get input
 def get_input():
+    # global
+    pass
+
+
+def solve():
     # global
     pass
 
@@ -16,4 +12,5 @@ def get_input():
 # Main
 if __name__ == "__main__":
     get_input()
+    solve()
     pass

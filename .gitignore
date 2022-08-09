@@ -127,4 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# my files
+**/test*
+**/.DS_Store
+private
+.vscode
+.markdownlint.json
+dataset
 new_exercise
