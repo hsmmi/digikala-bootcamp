@@ -136,3 +136,6 @@ private
 .markdownlint.json
 dataset
 new_exercise
+
+#php
+**/vendor
